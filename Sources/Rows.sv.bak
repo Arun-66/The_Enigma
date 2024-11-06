@@ -1,0 +1,135 @@
+module Column(
+input logic [7:0] a0,
+input logic [7:0] a1,
+input logic [7:0] a2,
+input logic [7:0] a3,
+input logic [7:0] b0,
+input logic [7:0] b1,
+input logic [7:0] b2,
+input logic [7:0] b3,
+input logic [7:0] c0,
+input logic [7:0] c1,
+input logic [7:0] c2,
+input logic [7:0] c3,
+input logic [7:0] d0,
+input logic [7:0] d1,
+input logic [7:0] d2,
+input logic [7:0] d3,
+input logic s3,s4,
+
+output logic [7:0] w0,
+output logic [7:0] w1,
+output logic [7:0] w2,
+output logic [7:0] w3,
+output logic [7:0] x0,
+output logic [7:0] x1,
+output logic [7:0] x2,
+output logic [7:0] x3,
+output logic [7:0] y0,
+output logic [7:0] y1,
+output logic [7:0] y2,
+output logic [7:0] y3,
+output logic [7:0] z0,
+output logic [7:0] z1,
+output logic [7:0] z2,
+output logic [7:0] z3
+);
+
+always @(s3 or s4)
+	begin
+	if(s3 == 0)
+		begin
+		if(s4 == 0) 
+			begin
+			w0 = a2;
+			w1 = b1;
+			w2 = c0;
+			w3 = d3;
+			
+			x0 = a2;
+			x1 = b1;
+			x3 = c0;
+			x2 = d3;
+			
+			y0 = a2;
+			y1 = b1;
+			y2 = c0;
+			y3 = d3;
+			
+			z0 = a2;
+			z1 = b1;
+			z2 = c0;
+			z3 = d3;
+			end
+		else if(s4 == 1) 
+			begin
+			w0 = a1;
+			w1 = b0;
+			w2 = c3;
+			w3 = d2;
+				
+			x0 = a1;
+			x1 = b0;
+			x2 = c3;
+			x3 = d2;
+					
+			y0 = a1;
+			y0 = b0;
+			y0 = c3;
+			y0 = d2;
+					
+			z0 = a1;
+			z0 = b0;
+			z0 = c3;
+			z0 = d2;
+			end
+		end
+	else if (s3 == 1)
+		begin
+		if(s4 == 0)
+			begin
+			w0 = a0;
+			w1 = b3;
+			w2 = c2;
+			w3 = d1;
+				
+			x0 = a0;
+			x1 = b3;
+			x2 = c2;
+			x3 = d1;
+				
+			y0 = a0;
+			y1 = b3;
+			y2 = c2;
+			y3 = d1;
+					
+			z0 = a0;
+			z1 = b3;
+			z2 = c2;
+			z3 = d1;
+			end
+		else if(s4 == 1) 
+			begin
+			w0 = a2;
+			w1 = b3;
+			w2 = c0;
+			w3 = d1;
+				
+			x0 = a2;
+			x1 = b3;
+			x2 = c0;
+			x3 = d1;
+				
+			y0 = a2;
+			y1 = b3;
+			y2 = c0;
+			y3 = d1;
+				
+			z0 = a2;
+			z1 = b3;
+			z2 = c0;
+			z3 = d1;
+			end
+	end
+end		
+endmodule

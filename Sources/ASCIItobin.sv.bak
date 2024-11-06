@@ -1,0 +1,7 @@
+module ASCIItobin(output logic [7:0]w);
+
+wire [7:0]string0;
+
+assign string0 = "a";
+
+endmodule

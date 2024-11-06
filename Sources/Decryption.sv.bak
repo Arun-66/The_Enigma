@@ -1,0 +1,54 @@
+module Decryption(
+input logic [7:0]a0,a1,a2,a3,b0,b1,b2,b3,c0,c1,c2,c3,d0,d1,d2,d3,
+input logic s0,s1,s2,s3,s4,s5,s6,s7,
+output logic [7:0]w0,w1,w2,w3,x0,x1,x2,x3,y0,y1,y2,y3,z0,z1,z2,z3
+);
+logic [7:0]l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16;
+
+crisscross cr1(a0,a1,a2,a3,b0,b1,b2,b3,c0,c1,c2,c3,d0,d1,d2,d3,s7,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16);
+
+logic [7:0]m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16;
+
+ReRows rr1(l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,s5,s6,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16);
+
+logic [7:0]n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15,n16;
+
+ReColumns(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16,s3,s4,n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13,n14,n15,n16);
+
+logic [7:0]o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15,o16;
+
+barrel bar0(n1,s1,s2,o1);
+barrel bar1(n2,s1,s2,o2);
+barrel bar2(n3,s1,s2,o3);
+barrel bar3(n4,s1,s2,o4);
+barrel bar4(n5,s1,s2,o5);
+barrel bar5(n6,s1,s2,o6);
+barrel bar6(n7,s1,s2,o7);
+barrel bar7(n8,s1,s2,o8);
+barrel bar8(n9,s1,s2,o9);
+barrel bar9(n10,s1,s2,o10);
+barrel bar10(n11,s1,s2,o11);
+barrel bar11(n12,s1,s2,o12);
+barrel bar12(n13,s1,s2,o13);
+barrel bar13(n14,s1,s2,o14);
+barrel bar14(n15,s1,s2,o15);
+barrel bar15(n16,s1,s2,o16);
+
+DataInv data0(o1,s0,w0);
+DataInv data1(o2,s0,w1);
+DataInv data2(o3,s0,w2);
+DataInv data3(o4,s0,w3);
+DataInv data4(o5,s0,x0);
+DataInv data5(o6,s0,x1);
+DataInv data6(o7,s0,x2);
+DataInv data7(o8,s0,x3);
+DataInv data8(o9,s0,y0);
+DataInv data9(o10,s0,y1);
+DataInv data10(o11,s0,y2);
+DataInv data11(o12,s0,y3);
+DataInv data12(o13,s0,z0);
+DataInv data13(o14,s0,z1);
+DataInv data14(o15,s0,z2);
+DataInv data15(o16,s0,z3);
+
+endmodule

@@ -1,0 +1,5 @@
+module mux2(input logic in0,in1,sel, output logic out);
+
+assign out = (in0&sel) | (in1&~sel);
+
+endmodule

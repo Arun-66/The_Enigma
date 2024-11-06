@@ -1,0 +1,19 @@
+module DataInv(
+input logic [7:0]a,
+input logic s0,
+output logic [7:0]w
+);
+
+always(s0)
+	begin
+	if(s0 == 0)
+		begin
+		w = ~a;
+		end
+	else if(s0 == 1)
+		begin
+		if(a != 0)
+			Subtractor s1(a,w);
+		end
+	end
+endmodule

@@ -1,0 +1,4 @@
+module FullAdder2(input logic a,b,c , output logic s,car);
+assign s = a ^ b ^ c;
+assign car = (a&b)|(b&c)|(c&a);
+endmodule

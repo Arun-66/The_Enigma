@@ -1,0 +1,38 @@
+module AtoB(
+input logic s0,s1,s2,s3,s4,s5,s6,s7,
+output logic [7:0]w0,w1,w2,w3,x0,x1,x2,x3,y0,y1,y2,y3,z0,z1,z2,z3)
+
+  // Declare 8-bit variables
+  reg [7:0] a0, b0, c0, d0, a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3;
+
+  // Input string containing 16 letters
+  string input_str = "abcdefghijklmnop";
+
+  // Loop to assign letters to variables
+  initial begin
+    for (int i = 0; i < 16; i = i + 4) begin
+      a0 = input_str[i];
+      b0 = input_str[i+1];
+      c0 = input_str[i+2];
+      d0 = input_str[i+3];
+
+      a1 = input_str[i+4];
+      b1 = input_str[i+5];
+      c1 = input_str[i+6];
+      d1 = input_str[i+7];
+
+      a2 = input_str[i+8];
+      b2 = input_str[i+9];
+      c2 = input_str[i+10];
+      d2 = input_str[i+11];
+
+      a3 = input_str[i+12];
+      b3 = input_str[i+13];
+      c3 = input_str[i+14];
+      d3 = input_str[i+15];
+
+      // Display the values
+      $display("a%d: %c, b%d: %c, c%d: %c, d%d: %c", i/4, a0, i/4, b0, i/4, c0, i/4, d0);
+    end
+  end
+endmodule

@@ -1,0 +1,46 @@
+module Column(
+input logic [7:0] a0,
+input logic [7:0] a1,
+input logic [7:0] a2,
+input logic [7:0] a3,
+input logic [7:0] b0,
+input logic [7:0] b1,
+input logic [7:0] b2,
+input logic [7:0] b3,
+input logic [7:0] c0,
+input logic [7:0] c1,
+input logic [7:0] c2,
+input logic [7:0] c3,
+input logic [7:0] d0,
+input logic [7:0] d1,
+input logic [7:0] d2,
+input logic [7:0] d3,
+input logic s3,s4,
+
+output logic [7:0] w0,
+output logic [7:0] w1,
+output logic [7:0] w2,
+output logic [7:0] w3,
+output logic [7:0] x0,
+output logic [7:0] x1,
+output logic [7:0] x2,
+output logic [7:0] x3,
+output logic [7:0] y0,
+output logic [7:0] y1,
+output logic [7:0] y2,
+output logic [7:0] y3,
+output logic [7:0] z0,
+output logic [7:0] z1,
+output logic [7:0] z2,
+output logic [7:0] z3
+);
+
+always @(s3 or s4)
+	if(s3 == 0)
+		if(s4 == 0) 
+			a2 <=w0;
+			a1 <=w1;
+			a0 <=w2;
+			a3 <=w3;
+			
+			
